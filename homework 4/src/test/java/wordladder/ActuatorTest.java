@@ -29,10 +29,16 @@ public class ActuatorTest {
         @Test
         public void shouldReturn200() throws Exception {
                 mockMvc.perform(MockMvcRequestBuilders.get("/actuator"))
-                                .andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+                                .andExpect(MockMvcResultMatchers.status().isOk())
+                                .andReturn();
                 mockMvc.perform(MockMvcRequestBuilders.get("/actuator/health"))
-                                .andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+                                .andExpect(MockMvcResultMatchers.status().isOk())
+                                .andReturn();
                 mockMvc.perform(MockMvcRequestBuilders.get("/actuator/info"))
-                                .andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+                                .andExpect(MockMvcResultMatchers.status().isOk())
+                                .andReturn();
+                mockMvc.perform(MockMvcRequestBuilders.get("/actuator/try"))
+                                .andExpect(MockMvcResultMatchers.jsonPath("$.date").value("20190414"))
+                                .andReturn();
         }
 }

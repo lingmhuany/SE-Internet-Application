@@ -1,8 +1,12 @@
-# Word Ladder with Spring Boot
+# Word Ladder with Spring Boot (Actuator and Security)
 
 ## Run
 1. Run `mvn spring-boot:run` in the command line.
-2. Open your browser or use Postman, try this address using GET request: http://localhost:8080/wordladder?word1={{word1}}&word2={{word2}}, where you should replace {{word1}} and {{word2}} with the words you like. For example, http://localhost:8080/wordladder?word1=data&word2=cake.
+2. Open http://localhost:8080/ in your browser or Postman.
+3. Log in with username 'hhhh' and password 'hhhh'.
+4. Try http://localhost:8080/wordladder?word1=data&word2=cake.
+5. Try http://localhost:8080/actuator, http://localhost:8080/actuator/health and http://localhost:8080/actuator/info...
+6. If you haven't logged in, they will return 401 error.
 
 ## Test
 Run `mvn test` in the command line.
