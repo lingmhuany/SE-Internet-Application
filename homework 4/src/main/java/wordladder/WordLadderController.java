@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WordLadderController {
 
+    @GetMapping("/greeting")
+    public String greeting() {
+        return "hello";
+    }
+
     @GetMapping("/wordladder")
     public String greeting(@RequestParam(value="word1") String word1, @RequestParam(value="word2") String word2) {
         WordLadder wordLadder = new WordLadder(word1, word2);
