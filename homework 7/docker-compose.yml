@@ -1,0 +1,19 @@
+eureka-service:
+  image: lingmhuany/wordladder-eureka-service
+  ports:
+    - "8761:8761"
+
+login:
+  image: lingmhuany/wordladder-login
+  ports:
+    - "8080:8080"
+  links:
+    - "eureka-service"
+
+find-ladder:
+  image: lingmhuany/wordladder-find-ladder
+  ports:
+    - "8081:8081"
+  links:
+    - "eureka-service"
+    - "login"

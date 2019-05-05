@@ -1,0 +1,3 @@
+FROM openjdk:8-jdk-alpine
+COPY target/*.jar wordladder-login.jar
+ENTRYPOINT ["java","-jar","/wordladder-login.jar"]
