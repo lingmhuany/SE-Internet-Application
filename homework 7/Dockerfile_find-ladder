@@ -1,0 +1,4 @@
+FROM openjdk:8-jdk-alpine
+COPY target/*.jar wordladder-find-ladder.jar
+COPY dictionary.txt dictionary.txt
+ENTRYPOINT ["java","-jar","/wordladder-find-ladder.jar"]
